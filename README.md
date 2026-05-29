@@ -1,0 +1,78 @@
+# spikepred · MTG spike forecast
+
+> **A buy-signal engine for the Magic: The Gathering secondary market.**
+> Dated, falsifiable forecasts of which cards will reach a target gain within a chosen window.
+> *Validated on a sealed 15-year held-out block. Top-20 buy basket returns +212% net of fees and dealer haircut.*
+
+![cover](forecasts/2026-05-29/spike_forecast_2026-05-29_social.png)
+
+A two-stage hierarchical model trained on **15.7 years of daily prices, 6,944 liquid cards, 235 features**:
+
+- **Stage 1 — Card-level:** for every liquid card, predict P(reach ≥ g × the buy price within H months). g and H are dials (1.5× / 2× / 3× / 5× ; 3 / 6 / 12 / 18 / 24 / 36 months).
+- **Stage 2 — Printing-level:** within each picked card, rank the available printings (Beta vs Unlimited vs modern reprint) so the buyer knows *which exact version* to acquire. The cheap modern reprint of a vintage card almost never spikes the same way as the Alpha/Beta original.
+- **Production scoring** blends Stage-1 probability with 30-day price momentum at a per-target weight tuned on validation.
+
+The cleanest demo is **Berserk**: when the card is hot, Stage 2 ranks Beta ($300, P(≥1.5×) = 90%) over the modern Conspiracy reprint ($17, P = 22%). The model finds the right *version*, not just the right name.
+
+## Headline held-out results (sealed 2023→2026 test block)
+
+| Target | Base rate | **Top-20 precision (ours+momentum)** | Momentum only |
+|---|---|---|---|
+| ≥ 1.5× / 24 mo | 26.5% | **100%** | 60% |
+| ≥ 2× / 24 mo | 14.5% | **90%** | 50% |
+| ≥ 3× / 24 mo | 6.2% | **50%** | 40% |
+
+Net-of-fees realised return (top-20 picks, monthly snapshots over 2023→2026):
+
+| Exit assumption | Model top-20 | Random baseline |
+|---|---|---|
+| Gross sustained-peak | **+488%** | +47% |
+| Net retail sale (12.5% fee + $1.50 ship) | **+403%** | +39% |
+| **Net buylist sale (55% of retail)** | **+212%** | **−47%** |
+
+Random picks *lose money* once you account for fees and the buylist haircut. The model's net buylist return is +212%. Full methodology, walk-forward validation across 5 rolling test years, calibration curves, feature importance, and the substitution-event validation against the September 2024 Commander bans are in [docs/REPORT.pdf](docs/REPORT.pdf).
+
+## Forecast archive
+
+Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was published on its dated day; nothing is backdated. Verify the picks against future prices yourself — that's the point.
+
+| Date | All-liquid | High-value (≥ $20) |
+|---|---|---|
+| 2026-05-29 | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29.pdf) | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29_hv20.pdf) |
+| 2026-05-27 | [PDF](forecasts/2026-05-27/spike_forecast_2026-05-27.pdf) | [PDF](forecasts/2026-05-27/spike_forecast_2026-05-27_hv20.pdf) |
+| 2026-05-01 | [PDF](forecasts/2026-05-01/spike_forecast_2026-05-01.pdf) | — |
+
+Each PDF: cover with live-headline track-record, three windows × top-20 picks with card images & calibrated probabilities, one page per window of *which printing to buy* with Stage-2 ranking, plus capacity tags (HIGH / MED / LOW market depth) and persistence stars (★N = consecutive forecasts the card has survived in).
+
+## What's in this repo
+
+| | |
+|---|---|
+| [`docs/REPORT.pdf`](docs/REPORT.pdf) | 14-section scientific report: held-out methodology, walk-forward, calibration, Berserk case study, negative results |
+| [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | High-level explanation of the approach |
+| [`forecasts/`](forecasts/) | Dated forecast PDFs and social images. Public track record. |
+| [`src/spikepred_public/`](src/spikepred_public/) | Open methodology code: feature engineering, time-blocked split / gating, walk-forward harness, baseline benchmark. **Not** included: the trained model artifacts or the live price pipeline (proprietary). |
+| [`examples/`](examples/) | Sample anonymised forecast CSV showing the output schema |
+
+## What's NOT in this repo (and why)
+
+- **Trained model artifacts** (`xgb_g*.json`, calibrators). The IP is the trained weights and the feature-engineering choices learned from years of MTG-finance data. Commercial licence available.
+- **The live price-ingest pipeline.** Built on a paid data source under terms that don't permit redistribution.
+- **The daily-refresh + auto-publish infrastructure.** Operationally meaningful but not what the science is about.
+
+If you want the live forecast or the trained model for commercial use, get in touch — see *Commercial use* below.
+
+## Cameraderie Cards
+
+`spikepred` is built by [Cameraderie Cards](https://github.com/rnorlund). The forecasts are part of the broader Cameraderie Cards toolkit for MTG players and investors. Reach out via GitHub issues or the contact on the parent site.
+
+## Commercial use
+
+This repository is released under [**PolyForm Noncommercial 1.0.0**](LICENSE). Non-commercial use, academic research, and verifying the methodology are explicitly permitted. **Commercial use requires a separate licence** — open an issue or contact Cameraderie Cards directly to negotiate one.
+
+## Important disclaimers
+
+- **Not financial advice.** Forecasts are informational. Past performance does not guarantee future returns. MTG cards are a volatile, illiquid collectibles market; you may lose money.
+- **Capacity matters.** If a thousand readers all buy the same top pick, you front-run yourselves. Cap your position size to the card's market depth (the PDF tags each pick HIGH / MED / LOW).
+- **Regime risk.** Held-out 2023 fold showed the model degrades when training data doesn't cover a regime shift; production training is rolled forward continuously to address this. See [docs/REPORT.pdf §13](docs/REPORT.pdf) for full transparency.
+- **TCG / eBay terms.** Acting on forecasts means buying and selling on collector marketplaces with their own terms and fees. Plan accordingly.

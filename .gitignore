@@ -1,0 +1,60 @@
+# --- Keep proprietary / sensitive artifacts out of this public repo ---
+# Trained model artifacts (the IP)
+*.json.bin
+*.ubj
+**/models/
+**/xgb_g*.json
+**/xgb_g*.ubj
+calibrators*.pkl
+calibrators*.joblib
+
+# Raw scraped data (paid source, redistribution not permitted)
+# Only top-level data dirs — DO NOT exclude src/**/data/ source modules.
+/data/
+/data_raw/
+/processed/
+/interim/
+*.parquet
+*.feather
+*.duckdb
+*.sqlite
+
+# Cookies and credentials (NEVER commit)
+*.cookies
+.cookies/
+*cookie*.txt
+*.env
+.env*
+credentials*.json
+secrets*
+
+# The live scrape / ingest pipeline lives in the private repo — make sure
+# nothing called refresh.py accidentally lands here.
+**/refresh.py
+**/refresh_and_rebuild.sh
+
+# Claude Code / agent harness
+.claude/settings.local.json
+.claude/session*
+.claude/projects/
+
+# Python build / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
