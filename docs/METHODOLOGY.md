@@ -1,4 +1,4 @@
-# spikepred methodology — high-level
+# mtgspike methodology — high-level
 
 This document explains *what the model does* and *how it is validated*, without revealing the
 trained weights, the proprietary feature-engineering recipes, or the live data pipeline. The
@@ -114,10 +114,10 @@ Random-baseline picks are net-negative under that exit, which is a meaningful mo
 ## 7. What is open in this repo
 
 - The framing, features-by-category list, validation protocol, calibration approach
-- Time-blocked split / gating logic ([`src/spikepred_public/model/dataset.py`](../src/spikepred_public/model/dataset.py))
-- Walk-forward harness ([`src/spikepred_public/model/walk_forward.py`](../src/spikepred_public/model/walk_forward.py))
-- The benchmark / leakage-check skeleton ([`src/spikepred_public/model/benchmark.py`](../src/spikepred_public/model/benchmark.py))
-- Public feature-build skeleton ([`src/spikepred_public/features/build.py`](../src/spikepred_public/features/build.py))
+- Time-blocked split / gating logic ([`src/mtgspike/model/dataset.py`](../src/mtgspike/model/dataset.py))
+- Walk-forward harness ([`src/mtgspike/model/walk_forward.py`](../src/mtgspike/model/walk_forward.py))
+- The benchmark / leakage-check skeleton ([`src/mtgspike/model/benchmark.py`](../src/mtgspike/model/benchmark.py))
+- Public feature-build skeleton ([`src/mtgspike/features/build.py`](../src/mtgspike/features/build.py))
 - The full scientific report ([REPORT.pdf](REPORT.pdf))
 - Every dated forecast we have ever published ([../forecasts/](../forecasts/))
 

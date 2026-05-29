@@ -26,7 +26,7 @@ import logging
 
 import polars as pl
 
-from spikepred.config import (
+from mtgspike.config import (
     ENTRY_MEDIAN_DAYS,
     HORIZONS_MONTHS,
     INTERIM_DIR,

@@ -20,7 +20,7 @@ import logging
 import numpy as np
 import polars as pl
 
-from spikepred.config import (
+from mtgspike.config import (
     ENTRY_MEDIAN_DAYS,
     INTERIM_DIR,
     PROCESSED_DIR,

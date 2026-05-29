@@ -1,4 +1,4 @@
-# spikepred · MTG spike forecast
+# mtgspike · MTG price-spike forecast
 
 > **A buy-signal engine for the Magic: The Gathering secondary market.**
 > Dated, falsifiable forecasts of which cards will reach a target gain within a chosen window.
@@ -51,7 +51,7 @@ Each PDF: cover with live-headline track-record, three windows × top-20 picks w
 | [`docs/REPORT.pdf`](docs/REPORT.pdf) | 14-section scientific report: held-out methodology, walk-forward, calibration, Berserk case study, negative results |
 | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | High-level explanation of the approach |
 | [`forecasts/`](forecasts/) | Dated forecast PDFs and social images. Public track record. |
-| [`src/spikepred_public/`](src/spikepred_public/) | Open methodology code: feature engineering, time-blocked split / gating, walk-forward harness, baseline benchmark. **Not** included: the trained model artifacts or the live price pipeline (proprietary). |
+| [`src/mtgspike/`](src/mtgspike/) | Open methodology code: feature engineering, time-blocked split / gating, walk-forward harness, baseline benchmark. **Not** included: the trained model artifacts or the live price pipeline (proprietary). |
 | [`examples/`](examples/) | Sample anonymised forecast CSV showing the output schema |
 
 ## What's NOT in this repo (and why)
@@ -64,7 +64,7 @@ If you want the live forecast or the trained model for commercial use, get in to
 
 ## Cameraderie Cards
 
-`spikepred` is built by [Cameraderie Cards](https://github.com/rnorlund). The forecasts are part of the broader Cameraderie Cards toolkit for MTG players and investors. Reach out via GitHub issues or the contact on the parent site.
+`mtgspike` is built by [Cameraderie Cards](https://github.com/rnorlund). The forecasts are part of the broader Cameraderie Cards toolkit for MTG players and investors. Reach out via GitHub issues or the contact on the parent site.
 
 ## Commercial use
 

@@ -21,9 +21,9 @@ import xgboost as xgb
 from sklearn.isotonic import IsotonicRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
 
-from spikepred.config import GAIN_LADDER, OUTPUTS_DIR, PROCESSED_DIR
-from spikepred.model.dataset import feature_columns, gated_split, to_long
-from spikepred.model.train import _matrix, _precision_at_k
+from mtgspike.config import GAIN_LADDER, OUTPUTS_DIR, PROCESSED_DIR
+from mtgspike.model.dataset import feature_columns, gated_split, to_long
+from mtgspike.model.train import _matrix, _precision_at_k
 
 log = logging.getLogger(__name__)
 

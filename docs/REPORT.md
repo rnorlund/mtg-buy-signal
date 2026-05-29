@@ -1,7 +1,7 @@
-# spikepred — MTG Price-Spike / Profitable-Buy Engine
+# mtgspike — MTG Price-Spike / Profitable-Buy Engine
 ### Findings & performance report
 
-**Authors:** spikepred system, automated technical report
+**Authors:** mtgspike system, automated technical report
 **Date:** 2026-05-29
 **Code & data:** `pricePredMTG/`
 **Held-out test fold:** sealed 2023-01-01 → 2026-05-27, never seen during training, hyperparameter
@@ -27,7 +27,7 @@ A single XGBoost classifier per *g* takes the horizon *H* as an input feature, s
 holding windows. Predictions are calibrated per head with isotonic regression on the validation fold.
 At inference the calibrated probability is rank-blended with 30-day price momentum at a weight learned
 per *g* on validation (heavily momentum-weighted at large *g*; see Sec. 4). Production CLI:
-`spikepred predict --multiple 2 --months 24` (or `--reserved-list`).
+`mtgspike predict --multiple 2 --months 24` (or `--reserved-list`).
 
 The feature matrix has 235 columns spanning six families: (i) trailing price dynamics (momentum,
 volatility, drawdown, CAGR, RSI, realised-spike count); (ii) 107 archetype/group flags + leave-one-out
@@ -250,8 +250,8 @@ regime-robust rolling CV so hyperparameter tuning can help safely.
 
 **How to invoke the system.**
 ```
-spikepred predict --multiple 2 --months 24            # ranked buy list
-spikepred predict --multiple 2 --months 36 --reserved-list   # RL watchlist
+mtgspike predict --multiple 2 --months 24            # ranked buy list
+mtgspike predict --multiple 2 --months 36 --reserved-list   # RL watchlist
 /predict                                               # dated snapshot PDF (3/6/12 mo)
 /predict --check YYYY-MM-DD                            # score a past forecast
 ```

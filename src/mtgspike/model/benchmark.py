@@ -24,10 +24,10 @@ import numpy as np
 import polars as pl
 import xgboost as xgb
 
-from spikepred.config import MODELS_DIR, OUTPUTS_DIR, PROCESSED_DIR, data_end
-from spikepred.model.dataset import feature_columns, gated_split, to_long
-from spikepred.model.train import _precision_at_k
-from spikepred.predict import _load
+from mtgspike.config import MODELS_DIR, OUTPUTS_DIR, PROCESSED_DIR, data_end
+from mtgspike.model.dataset import feature_columns, gated_split, to_long
+from mtgspike.model.train import _precision_at_k
+from mtgspike.predict import _load
 from sklearn.metrics import average_precision_score
 
 log = logging.getLogger(__name__)

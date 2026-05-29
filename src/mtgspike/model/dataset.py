@@ -17,7 +17,7 @@ from datetime import date
 
 import polars as pl
 
-from spikepred.config import GAIN_LADDER, HORIZONS_MONTHS
+from mtgspike.config import GAIN_LADDER, HORIZONS_MONTHS
 
 log = logging.getLogger(__name__)
 
