@@ -36,11 +36,13 @@ Random picks *lose money* once you account for fees and the buylist haircut. The
 
 Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was published on its dated day; nothing is backdated. Verify the picks against future prices yourself — that's the point.
 
+<!-- FORECAST_TABLE_START -->
 | Date | All-liquid | High-value (≥ $20) |
 |---|---|---|
 | 2026-05-29 | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29.pdf) | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29_hv20.pdf) |
 | 2026-05-27 | [PDF](forecasts/2026-05-27/spike_forecast_2026-05-27.pdf) | [PDF](forecasts/2026-05-27/spike_forecast_2026-05-27_hv20.pdf) |
 | 2026-05-01 | [PDF](forecasts/2026-05-01/spike_forecast_2026-05-01.pdf) | — |
+<!-- FORECAST_TABLE_END -->
 
 Each PDF: cover with live-headline track-record, three windows × top-20 picks with card images & calibrated probabilities, one page per window of *which printing to buy* with Stage-2 ranking, plus capacity tags (HIGH / MED / LOW market depth) and persistence stars (★N = consecutive forecasts the card has survived in).
 
