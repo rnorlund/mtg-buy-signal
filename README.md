@@ -39,6 +39,7 @@ Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was publish
 <!-- FORECAST_TABLE_START -->
 | Date | All-liquid | High-value (≥ $20) |
 |---|---|---|
+| 2026-05-30 | [PDF](forecasts/2026-05-30/spike_forecast_2026-05-30.pdf) | [PDF](forecasts/2026-05-30/spike_forecast_2026-05-30_hv20.pdf) |
 | 2026-05-29 | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29.pdf) | [PDF](forecasts/2026-05-29/spike_forecast_2026-05-29_hv20.pdf) |
 | 2026-05-01 | [PDF](forecasts/2026-05-01/spike_forecast_2026-05-01.pdf) | [PDF](forecasts/2026-05-01/spike_forecast_2026-05-01_hv20.pdf) |
 <!-- FORECAST_TABLE_END -->
