@@ -1,8 +1,10 @@
-# mtgspike · MTG price-spike forecast
+# mtg-buy-signal · MTG card-price BUY signal
 
 > **A buy-signal engine for the Magic: The Gathering secondary market.**
 > Dated, falsifiable forecasts of which cards will reach a target gain within a chosen window.
 > *Validated on a sealed 15-year held-out block. Top-20 buy basket returns +212% net of fees and dealer haircut.*
+>
+> Part of the **Cameraderie Cards** toolkit: [`mtg-buy-signal`](https://github.com/rnorlund/mtg-buy-signal) (you are here) · [`mtg-sell-signal`](https://github.com/rnorlund/mtg-sell-signal) · [`mtg-reprint-signal`](https://github.com/rnorlund/mtg-reprint-signal)
 
 ![cover](forecasts/2026-05-29/spike_forecast_2026-05-29_social.png)
 
@@ -71,11 +73,20 @@ If you want the live forecast or the trained model for commercial use, get in to
 
 ## Cameraderie Cards
 
-`mtgspike` is built by [Cameraderie Cards](https://github.com/rnorlund). The forecasts are part of the broader Cameraderie Cards toolkit for MTG players and investors. Reach out via GitHub issues or the contact on the parent site.
+`mtg-buy-signal` (powered by the `mtgspike` model) is built by [Cameraderie Cards](https://github.com/rnorlund). The forecasts are part of the broader Cameraderie Cards toolkit for MTG players and investors. Reach out via GitHub issues or the contact on the parent site.
 
 ## Commercial use
 
 This repository is released under [**PolyForm Noncommercial 1.0.0**](LICENSE). Non-commercial use, academic research, and verifying the methodology are explicitly permitted. **Commercial use requires a separate licence** — open an issue or contact Cameraderie Cards directly to negotiate one.
+
+## Sibling repositories
+
+| Repo | Question it answers |
+|---|---|
+| [`mtg-buy-signal`](https://github.com/rnorlund/mtg-buy-signal) | Which cards are likely to spike upward — when to **buy** |
+| [`mtg-sell-signal`](https://github.com/rnorlund/mtg-sell-signal) | Which cards have peaked and are likely to fall — when to **sell** |
+| [`mtg-reprint-signal`](https://github.com/rnorlund/mtg-reprint-signal) | Which cards are at risk of being reprinted — when to **brace** |
+| [`cameraderie-cards`](https://github.com/rnorlund/cameraderie-cards) | Umbrella landing page
 
 ## Important disclaimers
 
