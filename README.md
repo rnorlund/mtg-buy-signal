@@ -41,6 +41,7 @@ Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was publish
 <!-- FORECAST_TABLE_START -->
 | Date | Forecast |
 |---|---|
+| 2026-06-10 | [PDF](forecasts/2026-06-10/spike_forecast_2026-06-10.pdf) |
 | 2026-06-09 | [PDF](forecasts/2026-06-09/spike_forecast_2026-06-09.pdf) |
 | 2026-06-08 | [PDF](forecasts/2026-06-08/spike_forecast_2026-06-08.pdf) |
 | 2026-06-07 | [PDF](forecasts/2026-06-07/spike_forecast_2026-06-07.pdf) |
