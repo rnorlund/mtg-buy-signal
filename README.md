@@ -41,6 +41,7 @@ Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was publish
 <!-- FORECAST_TABLE_START -->
 | Date | Forecast |
 |---|---|
+| 2026-10-12 | [PDF](forecasts/2026-10-12/spike_forecast_2026-10-12.pdf) |
 | 2026-10-11 | [PDF](forecasts/2026-10-11/spike_forecast_2026-10-11.pdf) |
 | 2026-10-10 | [PDF](forecasts/2026-10-10/spike_forecast_2026-10-10.pdf) |
 | 2026-10-09 | [PDF](forecasts/2026-10-09/spike_forecast_2026-10-09.pdf) |
@@ -70,7 +71,6 @@ Dated, falsifiable PDFs land in [`forecasts/`](forecasts/). Each one was publish
 | 2026-09-08 | [PDF](forecasts/2026-09-08/spike_forecast_2026-09-08.pdf) |
 | 2026-09-07 | [PDF](forecasts/2026-09-07/spike_forecast_2026-09-07.pdf) |
 | 2026-09-05 | [PDF](forecasts/2026-09-05/spike_forecast_2026-09-05.pdf) |
-| 2026-09-04 | [PDF](forecasts/2026-09-04/spike_forecast_2026-09-04.pdf) |
 <!-- FORECAST_TABLE_END -->
 
 Each PDF: cover with live-headline track-record, three windows × top-20 picks with card images & calibrated probabilities, plus:
